@@ -80,7 +80,7 @@ class Axis extends PureComponent<Props> {
             margin={margin}
             height={height}
             x={x}
-            showLabel={axisConfig.showXAxis}
+            showLabel={axisConfig.showXAxisLabel}
             label={axisConfig.xLabel}
             labelPosition={axisConfig.xLabelPosition}
             showGrid={showGrid}
@@ -93,7 +93,7 @@ class Axis extends PureComponent<Props> {
             margin={margin}
             height={height}
             y={y}
-            showLabel={axisConfig.showYAxis}
+            showLabel={axisConfig.showYAxisLabel}
             label={axisConfig.yLabel}
             labelPosition={axisConfig.yLabelPosition}
             showGrid={showGrid}
