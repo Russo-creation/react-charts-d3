@@ -87,7 +87,7 @@ class LineChart extends PureComponent<Props, State> {
       xLabel: 'X Axis',
       xLabelPosition: 'right',
       showYAxis: true,
-      showYAxisLabel: true,
+      showYAxisLabel: false,
       yLabel: 'Y Axis',
       yLabelPosition: 'top',
     },
