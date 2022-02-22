@@ -24,7 +24,7 @@ type Props = {|
   /** Position of x label. Left / Center / Right. */
   labelPosition: string,
   /** Display or hide the axis grid. */
-  showGrid: boolean,
+  showGridX: boolean,
 |};
 
 /** Class representing an XAxis node. */
@@ -38,7 +38,7 @@ class XAxis extends PureComponent<Props> {
     showLabel: true,
     label: 'X Axis',
     labelPosition: 'right',
-    showGrid: true,
+    showGridX: true,
   };
 
   // Element flow types.
@@ -75,7 +75,7 @@ class XAxis extends PureComponent<Props> {
 
   /** Render the X Axis. */
   renderXAxis = () => {
-    const { data, height, x, showLabel, label, showGrid } = this.props;
+    const { data, height, x, showLabel, label, showGridX } = this.props;
 
     if (!x) {
       return;
@@ -107,7 +107,7 @@ class XAxis extends PureComponent<Props> {
     });
 
     xAxis
-      .filter(() => showGrid)
+      .filter(() => showGridX)
       .append('g')
       .attr('class', 'grid x-grid')
       .call(

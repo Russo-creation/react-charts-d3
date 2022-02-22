@@ -24,7 +24,7 @@ type Props = {|
   /** Position of y label. Top / Middle / Bottom. */
   labelPosition: string,
   /** Display or hide the axis grid. */
-  showGrid: boolean,
+  showGridY: boolean,
   /** If format is specified, sets the tick format function and returns the axis. See d3-format and d3-time-format for help. */
   tickFormat: string,
 |};
@@ -40,7 +40,7 @@ class YAxis extends PureComponent<Props> {
     showLabel: true,
     label: 'Y Axis',
     labelPosition: 'top',
-    showGrid: true,
+    showGridY: true,
     tickFormat: '',
   };
 
@@ -84,7 +84,7 @@ class YAxis extends PureComponent<Props> {
       y,
       showLabel,
       label,
-      showGrid,
+      showGridY,
       tickFormat,
     } = this.props;
 
@@ -118,7 +118,7 @@ class YAxis extends PureComponent<Props> {
     });
 
     yAxis
-      .filter(() => showGrid)
+      .filter(() => showGridY)
       .append('g')
       .attr('class', 'grid y-grid')
       .call(

@@ -33,7 +33,9 @@ type Props = {|
   /** Object that defines all the axis values. */
   axisConfig: AxisConfig,
   /** Display or hide the axis grid. */
-  showGrid: boolean,
+  showGridX: boolean,
+  /** Display or hide the axis grid. */
+  showGridY: boolean,
   /** Override the default scale type for the X axis. */
   xScaleType: string,
   /** Override the default scale type for the Y axis. */
@@ -87,7 +89,8 @@ class ScatterChart extends PureComponent<Props, State> {
       yLabel: 'Y Axis',
       yLabelPosition: 'top',
     },
-    showGrid: true,
+    showGridX: true,
+    showGridY: true,
     xScaleType: 'linear',
     yScaleType: 'linear',
     tickFormat: '.0f',
@@ -189,7 +192,8 @@ class ScatterChart extends PureComponent<Props, State> {
       margin,
       showLegend,
       axisConfig,
-      showGrid,
+      showGridX,
+      showGridY,
       xScaleType,
       yScaleType,
       tickFormat,
@@ -249,7 +253,8 @@ class ScatterChart extends PureComponent<Props, State> {
                 x={x}
                 y={y}
                 axisConfig={axisConfig}
-                showGrid={showGrid}
+                showGridX={showGridX}
+                showGridY={showGridY}
                 tickFormat={tickFormat}
               />
               <Points

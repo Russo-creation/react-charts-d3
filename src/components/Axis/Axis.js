@@ -23,7 +23,9 @@ type Props = {|
   /** Object that defines all the axis values. */
   axisConfig: AxisConfig,
   /** Display or hide the axis grid. */
-  showGrid: boolean,
+  showGridX: boolean,
+  /** Display or hide the axis grid. */
+  showGridY: boolean,
   /** If format is specified, sets the tick format function and returns the axis. See d3-format and d3-time-format for help. */
   tickFormat: string,
 |};
@@ -46,7 +48,8 @@ class Axis extends PureComponent<Props> {
       yLabel: 'Y Axis',
       yLabelPosition: 'top',
     },
-    showGrid: true,
+    showGridX: true,
+    showGridY: true,
     tickFormat: '.0f',
   };
 
@@ -62,7 +65,8 @@ class Axis extends PureComponent<Props> {
       x,
       y,
       axisConfig,
-      showGrid,
+      showGridX,
+      showGridY,
       tickFormat,
     } = this.props;
 
@@ -83,7 +87,7 @@ class Axis extends PureComponent<Props> {
             showLabel={axisConfig.showXAxisLabel}
             label={axisConfig.xLabel}
             labelPosition={axisConfig.xLabelPosition}
-            showGrid={showGrid}
+            showGridX={showGridX}
           />
         )}
         {axisConfig.showYAxis && (
@@ -96,7 +100,7 @@ class Axis extends PureComponent<Props> {
             showLabel={axisConfig.showYAxisLabel}
             label={axisConfig.yLabel}
             labelPosition={axisConfig.yLabelPosition}
-            showGrid={showGrid}
+            showGridY={showGridY}
             tickFormat={tickFormat}
           />
         )}
